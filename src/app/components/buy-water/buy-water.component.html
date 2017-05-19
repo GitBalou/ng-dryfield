@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()">
+    
+    <label for="water">Acheter de l'eau</label>
+        
+    <input type="number" id="water" name="water" [(ngModel)]="water" #waterTp="ngModel" min="0" max="{{max}}" />
+
+    <input type="submit" value="acheter" />
+
+     <p *ngIf="validationMsg">{{validationMsg}}</p>
+</form>

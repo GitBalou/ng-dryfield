@@ -1,0 +1,6 @@
+<h2>Champ</h2>
+<p>Récolte : {{harvestState}}</p>
+<p>Eau : {{waterReserve | number : '1.2-2'}} L</p>
+<button (click)="irrigate()">Irrigate</button>
+<progress min="0" max="{{maxDayCount}}" value="{{dayCount}}" ></progress>
+<button (click)="harvest()" *ngIf="harvestState == 'ok'" >Harvest</button>

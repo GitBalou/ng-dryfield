@@ -1,0 +1,17 @@
+<h2>Ecran de jeu</h2>
+<button (click)="start()">Démarrer</button>
+
+<player [nbHarvest]="player.nbHarvest" [money]="player.money" [water]="player.water" ></player>
+
+
+<field
+    *ngFor="let field of fields; let i = index"
+    [id]="i"
+    [dayCount]="field.dayCount" 
+    [harvestState]="field.harvestState" 
+    [waterReserve]="field.waterReserve"
+    (onIrrigate)="irrigateField($event)"
+    (onHarvest)="harvestField($event)"
+    ></field>
+
+<buy-water [max]="player.money" (onBuy)="buyWater($event)"></buy-water>
